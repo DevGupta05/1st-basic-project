@@ -1,0 +1,24 @@
+# Importing Libraries
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+import seaborn as sns
+# Importing file into the notebook
+df = pd.read_csv('Diwali Sales Data.csv',encoding = 'unicode_escape')
+# to avoid encoding error , use unicode escape
+df.shape
+# find the exact dimensions (rows and columns) of a pandas DataFrame.
+# not a function,, so you must use df.shape without the parentheses (). Using df.shape() will cause a TypeError.
+#It returns a standard Python tuple containing two integers: (number of rows, number of columns).
+# Why do data analysts use it?Sanity Checks: Verifying that data loaded completely after importing a large CSV file.Merge Validation: Checking if rows were accidentally duplicated or lost after joining two tables.Looping: Automating scripts that need to know exactly how many rows of data to process.
+df.head(10)
+# used to preview the first few rows of a pandas DataFrame.
+#Why do data analysts use it?Verify Column Names: Checking if headers are formatted correctly (e.g., lowercase, no weird spaces).Inspect Data Types: Quickly checking if numerical columns accidentally contain text or missing values (NaN).Save Memory: Previewing a massive 1-gigabyte file instantly without crashing your computer by loading the whole thing.
+# df.tail(): A sister command that shows the last 5 rows instead
+# DATA CLEANING
+df.info()
+# is used to get a comprehensive technical summary of a pandas DataFrame.
+#It provides an instant health check of your dataset by showing its size, data types, and memory usage.
+#When you run df.info(), pandas prints out a structured summary containing five key pieces of information:Total Index Range: The total number of rows and their index labels (e.g., RangeIndex: 5000 entries, 0 to 4999).Column Names: A complete list of all columns in the dataset.Non-Null Counts: The number of non-missing values in each column. This helps you instantly spot missing data (NaN values).Data Types (dtypes): The technical format of each column (e.g., int64 for whole numbers, float64 for decimals, object for text).Memory Usage: Exactly how much computer RAM the dataset is consuming.
+# Why do data analysts use it?Spotting Missing Data: By comparing the column counts to the total entries, you know exactly which columns need cleaning.Debugging Data Types: Checking if a column that should be numbers (like Salary) was accidentally loaded as text (object) due to a typo in the raw file.Optimising Performance: Watching the memory footprint when working with huge production datasets.
