@@ -4,18 +4,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 %matplotlib inline
 import seaborn as sns
+
+
 # Importing file into the notebook
 df = pd.read_csv('Diwali Sales Data.csv',encoding = 'unicode_escape')
 # to avoid encoding error , use unicode escape
+
+
 df.shape
 # find the exact dimensions (rows and columns) of a pandas DataFrame.
 # not a function,, so you must use df.shape without the parentheses (). Using df.shape() will cause a TypeError.
 #It returns a standard Python tuple containing two integers: (number of rows, number of columns).
 # Why do data analysts use it?Sanity Checks: Verifying that data loaded completely after importing a large CSV file.Merge Validation: Checking if rows were accidentally duplicated or lost after joining two tables.Looping: Automating scripts that need to know exactly how many rows of data to process.
+
+
 df.head(10)
 # used to preview the first few rows of a pandas DataFrame.
 #Why do data analysts use it?Verify Column Names: Checking if headers are formatted correctly (e.g., lowercase, no weird spaces).Inspect Data Types: Quickly checking if numerical columns accidentally contain text or missing values (NaN).Save Memory: Previewing a massive 1-gigabyte file instantly without crashing your computer by loading the whole thing.
+
+
 # df.tail(): A sister command that shows the last 5 rows instead
+
+
 # DATA CLEANING
 df.info()
 # is used to get a comprehensive technical summary of a pandas DataFrame.
